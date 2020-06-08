@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document</title>
+</head>
+<body text="#330000" bgcolor="#999FF">
+
+<font size="+4" align="center"><header>This is a Principal Calculator</header></font>
+
+<table bgcolor="#9999FF" border="3" bordercolor="#000000" cellspacing="3" cellpadding="2" align="center">
+	<tr width="50">
+     <td>
+     	 <pre align="left"> Principal                  Interest           Number of Years</pre>    
+     	       
+     </td>
+	<tr>
+<!--           Top                                -->
+	<tr>
+     <td>
+     	
+<div align="center">
+
+<input type="number" id="start" oninput="Calc()">
+<input type="number" id="comp" step="0.01" oninput="Calc()" >
+<input type="number" id="years" oninput="Calc()">
+<p id="out"></p>
+</div>
+
+     </td>
+	<tr>
+</table>
+
+
+
+
+<script>
+	function Calc(){
+      //console.log("hey")
+      let st=document.getElementById("start").value; //unpack
+      let co=document.getElementById("comp").value; //unpack
+      let ye=document.getElementById("years").value //unpack
+      //console.log(" "+st+"  "+co+"  "+"  "+ye)  //debug test
+       console.log(1+Number(co));
+      let fac= Math.pow((1+Number(co)), Number(ye)); //calculate coef
+      let out= (Number(st)*fac);  //apply to prinipal
+ 
+      console.log(fac);
+      
+      out=Math.round(out*100); //round to find exact in 
+      let ou=String(out/100);
+
+      document.getElementById("out").innerHTML="Future value is: "+ou;//.slice(0, 7)
+
+	}
+</script>
+
+</body>
+</html>
